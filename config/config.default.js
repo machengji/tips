@@ -23,10 +23,16 @@ module.exports = appInfo => {
   };
   // 配置中间件（此处暂未添加任何中间件）
   config.middleware = [];
+  // 微信小程序配置
+  config.wechat = {
+    appid: 'wx143a38ebfeaba324',
+    secret: '39a3fc50c468dd5078598652ede18451',
+  };
+
   // 配置 MongoDB
   config.mongoose = {
     client: {
-      url: process.env.MONGODB_URL || 'mongodb://localhost:27017/tip', // 从环境变量读取，并设置默认值
+      url: 'mongodb://127.0.0.1:27017/tip', // 从环境变量读取，并设置默认值
       options: {
         useNewUrlParser: true,
         useUnifiedTopology: true,
